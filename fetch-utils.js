@@ -8,7 +8,6 @@ export async function getAllMovies() {
     const response = await client
         .from('nicolas-cage-movies')
         .select();
-    console.log(response.data);
     return response.data;
 }
 

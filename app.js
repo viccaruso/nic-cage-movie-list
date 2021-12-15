@@ -1,5 +1,5 @@
 import { getAllMovies } from './fetch-utils.js';
-import { renderMovie, renderMovieDetails } from './render-utils.js';
+import { renderMovie } from './render-utils.js';
 const moviesDivEl = document.querySelector('#movies');
 
 window.addEventListener('load', async() => {
