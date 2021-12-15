@@ -5,11 +5,11 @@ export function renderMovie(movie) {
     const titleEl = document.createElement('p');
 
     titleEl.textContent = movie.title;
-    movieImgEl.src = '';
+    movieImgEl.src = setImgPath(movie.title);
     anchor.href = `./detail/?id=${movie.id}`;
 
     container.classList.add('movie');
-    container.append(titleEl);
+    container.append(titleEl, movieImgEl);
 
     anchor.append(container);
     return anchor;
@@ -39,3 +39,25 @@ export function renderMovieDetails(movie) {
     return container;
 }
 
+function setImgPath(title) {
+    switch (title) {
+        case 'Pig':
+            return './assets/pig.jpeg';
+        case 'Adaptation':
+            return './assets/adaptation.jpeg';
+        case 'Face/Off':
+            return './assets/face-off.jpeg';
+        case 'Moonstruck':
+            return './assets/moonstruck.jpeg';
+        case 'Raising Arizona':
+            return './assets/raising-arizona.jpeg';
+        case 'Red Rock West':
+            return './assets/red-rock-west.jpeg';
+        case 'Leaving Las Vegas':
+            return './assets/leaving-las-vegas.jpeg';
+        case 'Con Air':
+            return './assets/conair.jpeg';
+        default:    
+            return '';
+    }
+}
