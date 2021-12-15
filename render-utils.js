@@ -17,6 +17,7 @@ export function renderMovie(movie) {
 
 export function renderMovieDetails(movie) {
     const container = document.createElement('div');
+    const imgEl = document.createElement('img');
     const titleEl = document.createElement('p');
     const ratingEl = document.createElement('p');
     const releaseDateEl = document.createElement('p');
@@ -25,6 +26,7 @@ export function renderMovieDetails(movie) {
     const descriptionEl = document.createElement('p');
     const directorEl = document.createElement('p');
 
+    imgEl.src = `.${setImgPath(movie.title)}`;
     titleEl.textContent = `${movie.title}`;
     ratingEl.textContent = `${movie.rating}`;
     releaseDateEl.textContent = `${movie.released}`;
@@ -34,7 +36,7 @@ export function renderMovieDetails(movie) {
     directorEl.textContent = `${movie.director}`;
 
     container.classList.add('movie-details');
-    container.append(titleEl, ratingEl, releaseDateEl, rtScoreEl, runtimeEl, descriptionEl, directorEl);
+    container.append(titleEl, imgEl, ratingEl, releaseDateEl, rtScoreEl, runtimeEl, descriptionEl, directorEl);
 
     return container;
 }
