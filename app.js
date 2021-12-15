@@ -1,8 +1,14 @@
-// import functions and grab DOM elements
+import { getAllMovies } from './fetch-utils.js';
+import { renderMovie } from './render-utils.js';
+const moviesDivEl = document.querySelector('#movies');
 
-// let state
+window.addEventListener('load', async() => {
+    const allMovies = await getAllMovies();
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+    for (let movie of allMovies) {
+        const movieEl = renderMovie(movie);
+        moviesDivEl.append(movieEl);
+    }
+
+});
+
