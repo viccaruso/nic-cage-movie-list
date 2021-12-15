@@ -108,3 +108,11 @@ img {
 .movie {
     margin: 0 1.5em 0 1.5em;
 }
+
+#movie-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
